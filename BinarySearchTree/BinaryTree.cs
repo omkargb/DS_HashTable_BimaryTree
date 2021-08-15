@@ -6,6 +6,8 @@ namespace BinarySearchTree
 {
     class BinaryTree<T> where T : IComparable
     {
+        int treeSize =0;
+
         public Node<T> root;
         public BinaryTree()
         {
@@ -16,9 +18,12 @@ namespace BinarySearchTree
         {
             Node<T> newNode = new Node<T>();
             newNode.item = element;
+            Console.Write("\n  " +element+ " \t ");
             if (root == null)
             { 
-                root = newNode; 
+                root = newNode;
+                Console.Write(" Root ");
+                treeSize++;
             }
             else
             {
@@ -29,26 +34,38 @@ namespace BinarySearchTree
                     parent = newRoot;
                     if (element < newRoot.item)
                     {
-                        Console.WriteLine(" {0} | To Left",element);
+                        Console.Write(" L");
                         newRoot = newRoot.left;
                         if (newRoot == null)
                         {
                             parent.left = newNode;
+                            treeSize++;
                             return;
                         }
                     }
                     else
                     {
-                        Console.WriteLine(" {0} | To Right", element);
+                        Console.Write(" R");
                         newRoot = newRoot.right;
                         if (newRoot == null)
                         {
                             parent.right = newNode;
+                            treeSize++;
                             return;
                         }
                     }
+                    Console.Write(" →");
                 }
             }
+        }
+
+        public void SizeOfTree()
+        {
+            if (root == null)
+            {
+                Console.WriteLine("Binary Search Tree is Empty");
+            }
+            Console.WriteLine("\n Size of tree is : "+treeSize);
         }
 
         public void Traverse(Node<T> Root)
