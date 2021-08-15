@@ -26,10 +26,11 @@ namespace BinarySearchTree
             bt.Insert(63);
             bt.Insert(67);
 
-            Console.Write("\n Elements Traversal : ");
+            Console.Write("\n\n Elements Traversal : ");
             bt.Traverse(bt.root);
             bt.SizeOfTree();
-            Console.WriteLine("\n");
+            Console.Write("\n Searching for node 63 :");
+            bt.SearchTree(bt.root,63);
         }
     }
 }
