@@ -63,7 +63,7 @@ namespace BinarySearchTree
         {
             if (root == null)
             {
-                Console.WriteLine("Binary Search Tree is Empty");
+                Console.WriteLine(" Binary Search Tree is Empty");
             }
             Console.WriteLine("\n Size of tree is : "+treeSize);
         }
